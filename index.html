@@ -1,0 +1,549 @@
+<!doctype html>
+<html lang="es" data-contact-email="TU_CORREO@EJEMPLO.COM">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Portfolio de Uriel Franco — diseño y desarrollo web con una mirada clara y humana."
+    />
+    <meta name="theme-color" content="#080a0a" />
+    <title>Uriel Franco — Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Saltar al contenido</a>
+
+    <div class="page-grain" aria-hidden="true"></div>
+
+    <header class="site-header shell" data-reveal>
+      <nav class="nav glass" aria-label="Navegación principal">
+        <a class="brand" href="#top" aria-label="Inicio, Uriel Franco">
+          <span class="brand-mark">UF</span>
+          <span>Uriel Franco</span>
+        </a>
+
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="nav-links"
+        >
+          <span class="sr-only">Abrir menú</span>
+          <span></span><span></span>
+        </button>
+
+        <div class="nav-links" id="nav-links">
+          <a href="#about">Sobre mí</a>
+          <a href="#projects">Proyectos</a>
+          <a href="#testimonials">Reseñas</a>
+          <button class="nav-contact" type="button" data-open-contact>
+            Hablemos <span aria-hidden="true">↗</span>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <section class="hero shell" id="top" aria-labelledby="hero-title">
+        <div class="hero-cards" data-reveal>
+          <div class="hero-panel glass">
+            <p class="eyebrow">
+              <span></span> Ingeniero &amp; Especialista en desarrollo FullStack
+            </p>
+            <h1 id="hero-title">
+              Ideas claras.<br />
+              <em>Experiencias</em> que se sienten.
+            </h1>
+            <p class="hero-copy">
+              Creo espacios digitales limpios, útiles y memorables para personas
+              y marcas que quieren moverse con intención.
+            </p>
+
+            <div class="hero-actions">
+              <a class="button button-light" href="#projects">
+                Explorar proyectos <span aria-hidden="true">↓</span>
+              </a>
+              <button class="text-link" type="button" data-open-contact>
+                Empecemos algo <span aria-hidden="true">↗</span>
+              </button>
+            </div>
+
+            <div class="signature-row">
+              <span class="signature">Uriel Franco</span>
+              <span class="availability"
+                ><i></i> Disponible para colaborar</span
+              >
+            </div>
+          </div>
+
+          <aside class="hero-services glass" aria-labelledby="services-title">
+            <h2 class="hero-services__title" id="services-title">
+              Tecnologías y Servicios
+            </h2>
+
+            <section
+              class="hero-services__section"
+              aria-labelledby="technologies-title"
+            >
+              <h3 class="hero-services__label" id="technologies-title">
+                Tecnologías principales
+              </h3>
+              <ul class="technology-list">
+                <li>
+                  <span class="technology-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" focusable="false">
+                      <circle cx="9" cy="5" r="3.3" />
+                      <circle cx="15" cy="5" r="3.3" />
+                      <circle cx="9" cy="12" r="3.3" />
+                      <circle cx="15" cy="12" r="3.3" />
+                      <circle cx="9" cy="19" r="3.3" />
+                    </svg>
+                  </span>
+                  <span>Figma</span>
+                </li>
+                <li>
+                  <span class="technology-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" focusable="false">
+                      <path
+                        d="M7 12h10v3.2A4.8 4.8 0 0 1 12.2 20h-.4A4.8 4.8 0 0 1 7 15.2V12Z"
+                      />
+                      <path d="M17 13.5h1.2a2.3 2.3 0 0 1 0 4.6H17" />
+                      <path
+                        d="M10 8.8c-1.3-1.3 1-2.3.1-3.8-.3-.5-.4-1.1-.1-1.8M14.1 9.2c1.4-1.3-.8-2.4.1-3.9.3-.5.4-1.1.1-1.8"
+                      />
+                    </svg>
+                  </span>
+                  <span>Java</span>
+                </li>
+                <li>
+                  <span class="technology-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" focusable="false">
+                      <path
+                        d="M12 3.5H8A3.5 3.5 0 0 0 4.5 7v4.5h7V14H8a1.5 1.5 0 0 0 0 3h3.5V20H16a3.5 3.5 0 0 0 3.5-3.5V12H12V9.5h3.5a1.5 1.5 0 0 0 0-3H12V3.5Z"
+                      />
+                      <circle
+                        cx="9"
+                        cy="7"
+                        r=".8"
+                        fill="currentColor"
+                        stroke="none"
+                      />
+                      <circle
+                        cx="15"
+                        cy="17"
+                        r=".8"
+                        fill="currentColor"
+                        stroke="none"
+                      />
+                    </svg>
+                  </span>
+                  <span>Python</span>
+                </li>
+                <li>
+                  <span
+                    class="technology-icon technology-icon--javascript"
+                    aria-hidden="true"
+                    >JS</span
+                  >
+                  <span>JavaScript</span>
+                </li>
+                <li>
+                  <span class="technology-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" focusable="false">
+                      <path
+                        d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2Z"
+                      />
+                    </svg>
+                  </span>
+                  <span>GitHub</span>
+                </li>
+                <li>
+                  <span
+                    class="technology-icon technology-icon--sql"
+                    aria-hidden="true"
+                    >SQL</span
+                  >
+                  <span>SQL</span>
+                </li>
+              </ul>
+            </section>
+
+            <section
+              class="hero-services__section hero-services__section--services"
+              aria-labelledby="key-services-title"
+            >
+              <h3 class="hero-services__label" id="key-services-title">
+                Servicios clave
+              </h3>
+              <ul class="service-list">
+                <li>Diseño UX / UI</li>
+                <li>Desarrollo FullStack</li>
+                <li>Arquitectura de Información</li>
+                <li>Ciencia de datos</li>
+              </ul>
+            </section>
+          </aside>
+        </div>
+
+        <a
+          class="scroll-cue"
+          href="#about"
+          aria-label="Ir a la sección Sobre mí"
+        >
+          <span>Desliza para descubrir</span>
+          <i aria-hidden="true">↓</i>
+        </a>
+      </section>
+
+      <section class="section shell" id="about" aria-labelledby="about-title">
+        <div class="section-heading" data-reveal>
+          <p class="eyebrow"><span></span> Un poco de mí</p>
+          <div>
+            <h2 id="about-title">Más allá de la pantalla.</h2>
+            <p>
+              Diseño desde la curiosidad: observo, ordeno y convierto lo
+              complejo en experiencias que se sienten naturales.
+            </p>
+          </div>
+        </div>
+
+        <div class="about-grid" data-reveal>
+          <button
+            class="flip-card reveal-delay-1"
+            type="button"
+            aria-pressed="false"
+            aria-label="Conocer mi enfoque. Activa para girar la tarjeta."
+            data-flip-card
+          >
+            <span class="flip-card-inner">
+              <span class="flip-card-face flip-card-front">
+                <img
+                  src="pics_portfolio/camping.jpg"
+                  alt="Uriel en un entorno de camping"
+                />
+                <span class="card-shade"></span>
+                <span class="card-content">
+                  <span class="card-index">01 / enfoque</span>
+                  <strong>Diseñar es escuchar primero.</strong>
+                  <span class="card-action"
+                    >Descubrir <b aria-hidden="true">↗</b></span
+                  >
+                </span>
+              </span>
+              <span class="flip-card-face flip-card-back">
+                <span class="card-index">Mi forma de trabajar</span>
+                <strong>Primero las personas, luego los píxeles.</strong>
+                <span class="back-copy">
+                  Cada decisión visual empieza con una pregunta simple: ¿cómo
+                  debería sentirse esto para quien lo usa?
+                </span>
+                <span class="card-action"
+                  >Volver <b aria-hidden="true">↺</b></span
+                >
+              </span>
+            </span>
+          </button>
+
+          <button
+            class="flip-card reveal-delay-2"
+            type="button"
+            aria-pressed="false"
+            aria-label="Conocer mis intereses. Activa para girar la tarjeta."
+            data-flip-card
+          >
+            <span class="flip-card-inner">
+              <span class="flip-card-face flip-card-front">
+                <img
+                  src="pics_portfolio/country.jpg"
+                  alt="Uriel al aire libre en el campo"
+                />
+                <span class="card-shade"></span>
+                <span class="card-content">
+                  <span class="card-index">02 / mirada</span>
+                  <strong>Lo simple deja<br />más espacio para sentir.</strong>
+                  <span class="card-action"
+                    >Descubrir <b aria-hidden="true">↗</b></span
+                  >
+                </span>
+              </span>
+              <span class="flip-card-face flip-card-back">
+                <span class="card-index">Lo que me inspira</span>
+                <strong>La claridad también puede tener carácter.</strong>
+                <span class="back-copy">
+                  Encuentro ideas en la luz, los detalles y las conversaciones
+                  honestas. Eso se refleja en cada interfaz que construyo.
+                </span>
+                <span class="card-action"
+                  >Volver <b aria-hidden="true">↺</b></span
+                >
+              </span>
+            </span>
+          </button>
+        </div>
+      </section>
+
+      <section
+        class="section shell"
+        id="projects"
+        aria-labelledby="projects-title"
+      >
+        <div class="section-heading projects-heading" data-reveal>
+          <p class="eyebrow"><span></span> Trabajo seleccionado</p>
+          <div>
+            <h2 id="projects-title">Algunos proyectos</h2>
+            <p>Este espacio muestra un poco de lo que podemos hacer juntos.</p>
+          </div>
+          <a
+            class="button button-outline"
+            href="https://github.com/UrielFranco11"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Ver todos <span aria-hidden="true">→</span>
+          </a>
+        </div>
+
+        <div class="projects-grid">
+          <article class="project-card project-card-featured" data-reveal>
+            <img
+              src="pics_portfolio/interior.jpg"
+              alt="Interior arquitectónico con luz natural"
+            />
+            <div class="project-overlay"></div>
+            <div class="project-content">
+              <span>01 / Próximamente</span>
+              <h3>Una experiencia por revelar</h3>
+              <p>Branding · Diseño web · Desarrollo</p>
+            </div>
+            <span class="project-arrow" aria-hidden="true">↗</span>
+          </article>
+
+          <article class="project-card" data-reveal>
+            <img
+              src="pics_portfolio/escaleras.jpg"
+              alt="Escaleras de arquitectura geométrica"
+            />
+            <div class="project-overlay"></div>
+            <div class="project-content">
+              <span>03 / Blog de Geopolitica</span>
+              <h3>Encontrar el siguiente paso</h3>
+              <p>Landing page · Front-end</p>
+            </div>
+            <span class="project-arrow" aria-hidden="true">↗</span>
+          </article>
+
+          <article class="project-card" data-reveal>
+            <img
+              src="pics_portfolio/qro.jpg"
+              alt="Paisaje urbano de Querétaro"
+            />
+            <div class="project-overlay"></div>
+            <div class="project-content">
+              <span>04 / Rick & Morty (API)</span>
+              <h3>Una historia con perspectiva</h3>
+              <p>E-commerce · UX · Desarrollo</p>
+            </div>
+            <span class="project-arrow" aria-hidden="true">↗</span>
+          </article>
+        </div>
+      </section>
+
+      <section
+        class="section shell"
+        id="testimonials"
+        aria-labelledby="testimonials-title"
+      >
+        <div class="section-heading testimonial-heading" data-reveal>
+          <p class="eyebrow"><span></span> Palabras bonitas</p>
+          <div>
+            <h2 id="testimonials-title">
+              Dicen que trabajar juntos se siente bien.
+            </h2>
+            <p>Algunas palabras de nuestros clientes.</p>
+          </div>
+          <div class="quote-mark" aria-hidden="true">“</div>
+        </div>
+
+        <div class="testimonials-track" aria-label="Reseñas de clientes">
+          <figure class="testimonial glass" data-reveal>
+            <div class="stars" aria-label="5 de 5 estrellas">★★★★★</div>
+            <blockquote>
+              “Entendió nuestra idea desde el inicio y la convirtió en una
+              experiencia mucho más clara de lo que imaginábamos.”
+            </blockquote>
+            <figcaption>
+              <span class="avatar">AM</span>
+              <span
+                ><strong>Andrea Morales</strong
+                ><small>Fundadora, estudio creativo</small></span
+              >
+            </figcaption>
+          </figure>
+
+          <figure class="testimonial glass" data-reveal>
+            <div class="stars" aria-label="5 de 5 estrellas">★★★★★</div>
+            <blockquote>
+              “El proceso fue ágil, cercano y muy bien pensado. Cada detalle de
+              la web tiene una razón de ser.”
+            </blockquote>
+            <figcaption>
+              <span class="avatar">JS</span>
+              <span
+                ><strong>Jorge Saldaña</strong
+                ><small>Director de producto</small></span
+              >
+            </figcaption>
+          </figure>
+
+          <figure class="testimonial glass" data-reveal>
+            <div class="stars" aria-label="5 de 5 estrellas">★★★★★</div>
+            <blockquote>
+              “Logró que nuestra marca se sintiera como nosotros: honesta,
+              moderna y fácil de recordar.”
+            </blockquote>
+            <figcaption>
+              <span class="avatar">LR</span>
+              <span
+                ><strong>Lucía Reyes</strong
+                ><small>Co-fundadora, Nómada</small></span
+              >
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section
+        class="section shell contact-section"
+        id="contact"
+        aria-labelledby="contact-title"
+      >
+        <div class="contact-panel glass" data-reveal>
+          <div class="contact-copy">
+            <p class="eyebrow"><span></span> Hagámoslo realidad</p>
+            <h2 id="contact-title">
+              ¿Listo para darle<br /><em>forma</em> a tu idea?
+            </h2>
+            <p>
+              Cuéntame lo que tienes en mente. Una buena conversación puede ser
+              el comienzo de algo extraordinario.
+            </p>
+            <button class="button button-light" type="button" data-open-contact>
+              Reservar una charla <span aria-hidden="true">↗</span>
+            </button>
+          </div>
+          <div class="contact-image-wrap">
+            <img
+              src="pics_portfolio/rostro.jpg"
+              alt="Retrato de Uriel Franco"
+            />
+            <span class="image-caption">Espacio para tu próxima historia</span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer shell">
+      <div class="footer-inner glass">
+        <span>© <span id="year"></span> Uriel Franco.</span>
+        <div class="social-links" aria-label="Redes sociales">
+          <a
+            href="https://www.linkedin.com/in/uriel-franco-jaramillo"
+            aria-label="LinkedIn"
+            target="_blank"
+            rel="noopener noreferrer"
+            >in</a
+          >
+        </div>
+      </div>
+    </footer>
+
+    <dialog
+      class="contact-dialog"
+      id="contact-dialog"
+      aria-labelledby="dialog-title"
+    >
+      <div class="dialog-inner">
+        <button
+          class="dialog-close"
+          type="button"
+          aria-label="Cerrar formulario"
+          data-close-contact
+        >
+          ×
+        </button>
+        <p class="eyebrow"><span></span> Hablemos</p>
+        <h2 id="dialog-title">Tu idea merece<br />una buena primera charla.</h2>
+        <p class="dialog-intro">
+          Comparte unos detalles y recibiré tu mensaje por correo.
+        </p>
+
+        <form id="contact-form">
+          <div class="form-grid">
+            <label>
+              Tu nombre
+              <input
+                type="text"
+                name="name"
+                placeholder="¿Cómo te llamas?"
+                autocomplete="name"
+                required
+              />
+            </label>
+            <label>
+              Tu correo
+              <input
+                type="email"
+                name="email"
+                placeholder="nombre@correo.com"
+                autocomplete="email"
+                required
+              />
+            </label>
+          </div>
+          <label>
+            ¿En qué podemos trabajar?
+            <select name="service" required>
+              <option value="" selected disabled>Elige una opción</option>
+              <option>Diseño y desarrollo web</option>
+              <option>Landing page</option>
+              <option>Portafolio / marca personal</option>
+              <option>Otro proyecto</option>
+            </select>
+          </label>
+          <label>
+            Cuéntame un poco más
+            <textarea
+              name="message"
+              rows="5"
+              placeholder="Objetivos, contexto, tiempos…"
+              required
+            ></textarea>
+          </label>
+          <div class="form-actions">
+            <button class="button button-light" type="submit">
+              Enviar mensaje <span aria-hidden="true">↗</span>
+            </button>
+            <button class="copy-button" type="button" id="copy-message">
+              Copiar mensaje
+            </button>
+          </div>
+          <p
+            class="form-status"
+            id="form-status"
+            role="status"
+            aria-live="polite"
+          ></p>
+        </form>
+      </div>
+    </dialog>
+
+    <script src="script.js"></script>
+  </body>
+</html>
