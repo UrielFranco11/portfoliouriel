@@ -1,51 +1,55 @@
-const menuToggle = document.querySelector('.menu-toggle');
-const navLinks = document.querySelector('.nav-links');
-const navLinkItems = document.querySelectorAll('.nav-links a, .nav-links button');
-const contactDialog = document.querySelector('#contact-dialog');
-const contactTriggers = document.querySelectorAll('[data-open-contact]');
-const closeContact = document.querySelector('[data-close-contact]');
-const contactForm = document.querySelector('#contact-form');
-const formStatus = document.querySelector('#form-status');
-const copyMessageButton = document.querySelector('#copy-message');
+const menuToggle = document.querySelector(".menu-toggle");
+const navLinks = document.querySelector(".nav-links");
+const navLinkItems = document.querySelectorAll(
+  ".nav-links a, .nav-links button",
+);
+const contactDialog = document.querySelector("#contact-dialog");
+const contactTriggers = document.querySelectorAll("[data-open-contact]");
+const closeContact = document.querySelector("[data-close-contact]");
+const contactForm = document.querySelector("#contact-form");
+const formStatus = document.querySelector("#form-status");
+const copyMessageButton = document.querySelector("#copy-message");
 
-document.querySelector('#year').textContent = new Date().getFullYear();
+document.querySelector("#year").textContent = new Date().getFullYear();
 
-menuToggle?.addEventListener('click', () => {
-  const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
-  menuToggle.setAttribute('aria-expanded', String(!isOpen));
-  navLinks.classList.toggle('is-open', !isOpen);
+menuToggle?.addEventListener("click", () => {
+  const isOpen = menuToggle.getAttribute("aria-expanded") === "true";
+  menuToggle.setAttribute("aria-expanded", String(!isOpen));
+  navLinks.classList.toggle("is-open", !isOpen);
 });
 
 navLinkItems.forEach((item) => {
-  item.addEventListener('click', () => {
-    menuToggle?.setAttribute('aria-expanded', 'false');
-    navLinks?.classList.remove('is-open');
+  item.addEventListener("click", () => {
+    menuToggle?.setAttribute("aria-expanded", "false");
+    navLinks?.classList.remove("is-open");
   });
 });
 
 const openContactDialog = () => {
   if (!contactDialog) return;
-  if (typeof contactDialog.showModal === 'function') {
+  if (typeof contactDialog.showModal === "function") {
     contactDialog.showModal();
   } else {
-    contactDialog.setAttribute('open', '');
+    contactDialog.setAttribute("open", "");
   }
-  window.setTimeout(() => contactDialog.querySelector('input')?.focus(), 120);
+  window.setTimeout(() => contactDialog.querySelector("input")?.focus(), 120);
 };
 
 const closeContactDialog = () => {
   if (!contactDialog) return;
-  if (typeof contactDialog.close === 'function') {
+  if (typeof contactDialog.close === "function") {
     contactDialog.close();
   } else {
-    contactDialog.removeAttribute('open');
+    contactDialog.removeAttribute("open");
   }
 };
 
-contactTriggers.forEach((trigger) => trigger.addEventListener('click', openContactDialog));
-closeContact?.addEventListener('click', closeContactDialog);
+contactTriggers.forEach((trigger) =>
+  trigger.addEventListener("click", openContactDialog),
+);
+closeContact?.addEventListener("click", closeContactDialog);
 
-contactDialog?.addEventListener('click', (event) => {
+contactDialog?.addEventListener("click", (event) => {
   const dialogBounds = contactDialog.getBoundingClientRect();
   const clickedOutside =
     event.clientX < dialogBounds.left ||
@@ -56,10 +60,10 @@ contactDialog?.addEventListener('click', (event) => {
   if (clickedOutside) closeContactDialog();
 });
 
-document.querySelectorAll('[data-flip-card]').forEach((card) => {
-  card.addEventListener('click', () => {
-    const flipped = card.classList.toggle('is-flipped');
-    card.setAttribute('aria-pressed', String(flipped));
+document.querySelectorAll("[data-flip-card]").forEach((card) => {
+  card.addEventListener("click", () => {
+    const flipped = card.classList.toggle("is-flipped");
+    card.setAttribute("aria-pressed", String(flipped));
   });
 });
 
@@ -68,14 +72,14 @@ const createMessage = () => {
 
   const data = new FormData(contactForm);
   return [
-    `Hola Uriel, mi nombre es ${data.get('name')}.`,
-    '',
-    `Correo para responder: ${data.get('email')}`,
-    `Proyecto: ${data.get('service')}`,
-    '',
-    'Mensaje:',
-    data.get('message'),
-  ].join('\n');
+    `Hola Uriel, mi nombre es ${data.get("name")}.`,
+    "",
+    `Correo para responder: ${data.get("email")}`,
+    `Proyecto: ${data.get("service")}`,
+    "",
+    "Mensaje:",
+    data.get("message"),
+  ].join("\n");
 };
 
 const copyMessage = async () => {
@@ -87,17 +91,18 @@ const copyMessage = async () => {
 
   try {
     await navigator.clipboard.writeText(message);
-    formStatus.textContent = 'Mensaje copiado. Puedes pegarlo donde prefieras.';
+    formStatus.textContent = "Mensaje copiado. Puedes pegarlo donde prefieras.";
     return true;
   } catch {
-    formStatus.textContent = 'No se pudo copiar automáticamente. Selecciona el texto desde tu correo.';
+    formStatus.textContent =
+      "No se pudo copiar automáticamente. Selecciona el texto desde tu correo.";
     return false;
   }
 };
 
-copyMessageButton?.addEventListener('click', copyMessage);
+copyMessageButton?.addEventListener("click", copyMessage);
 
-contactForm?.addEventListener('submit', (event) => {
+contactForm?.addEventListener("submit", (event) => {
   event.preventDefault();
   const message = createMessage();
   if (!message) {
@@ -106,58 +111,63 @@ contactForm?.addEventListener('submit', (event) => {
   }
 
   const recipient = document.documentElement.dataset.contactEmail?.trim();
-  const isConfigured = recipient && !recipient.includes('TU_CORREO@EJEMPLO.COM');
+  const isConfigured =
+    recipient && !recipient.includes("TU_CORREO@EJEMPLO.COM");
 
   if (!isConfigured) {
-    formStatus.textContent = 'Falta configurar el correo de recepción en index.html antes de publicar el portafolio.';
+    formStatus.textContent =
+      "Falta configurar el correo de recepción en index.html antes de publicar el portafolio.";
     return;
   }
 
   const submitButton = contactForm.querySelector('[type="submit"]');
   const formData = new FormData(contactForm);
-  formData.append('_subject', `Nueva consulta de ${formData.get('name')}`);
-  formData.append('_template', 'table');
-  formData.append('_captcha', 'false');
+  formData.append("_subject", `Nueva consulta de ${formData.get("name")}`);
+  formData.append("_template", "table");
+  formData.append("_captcha", "false");
 
   submitButton.disabled = true;
-  formStatus.textContent = 'Enviando tu mensaje…';
+  formStatus.textContent = "Enviando tu mensaje…";
 
   fetch(`https://formsubmit.co/ajax/${encodeURIComponent(recipient)}`, {
-    method: 'POST',
+    method: "POST",
     body: formData,
-    headers: { Accept: 'application/json' },
+    headers: { Accept: "application/json" },
   })
     .then((response) => {
-      if (!response.ok) throw new Error('No se pudo enviar el formulario.');
+      if (!response.ok) throw new Error("No se pudo enviar el formulario.");
       contactForm.reset();
-      formStatus.textContent = '¡Gracias! Tu mensaje llegó correctamente.';
+      formStatus.textContent = "¡Gracias! Tu mensaje llegó correctamente.";
     })
     .catch(() => {
-      const subject = encodeURIComponent(`Nueva consulta de ${formData.get('name')}`);
+      const subject = encodeURIComponent(
+        `Nueva consulta de ${formData.get("name")}`,
+      );
       const body = encodeURIComponent(message);
       window.location.href = `mailto:${recipient}?subject=${subject}&body=${body}`;
-      formStatus.textContent = 'No hubo conexión con el formulario. Abrimos tu correo como alternativa.';
+      formStatus.textContent =
+        "No hubo conexión con el formulario. Abrimos tu correo como alternativa.";
     })
     .finally(() => {
       submitButton.disabled = false;
     });
 });
 
-const revealItems = document.querySelectorAll('[data-reveal]');
+const revealItems = document.querySelectorAll("[data-reveal]");
 
-if ('IntersectionObserver' in window) {
+if ("IntersectionObserver" in window) {
   const revealObserver = new IntersectionObserver(
     (entries, observer) => {
       entries.forEach((entry) => {
         if (!entry.isIntersecting) return;
-        entry.target.classList.add('is-visible');
+        entry.target.classList.add("is-visible");
         observer.unobserve(entry.target);
       });
     },
-    { threshold: 0.13 }
+    { threshold: 0.13 },
   );
 
   revealItems.forEach((item) => revealObserver.observe(item));
 } else {
-  revealItems.forEach((item) => item.classList.add('is-visible'));
+  revealItems.forEach((item) => item.classList.add("is-visible"));
 }
