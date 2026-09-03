@@ -9,6 +9,79 @@ const closeContact = document.querySelector("[data-close-contact]");
 const contactForm = document.querySelector("#contact-form");
 const formStatus = document.querySelector("#form-status");
 const copyMessageButton = document.querySelector("#copy-message");
+const projectsGrid = document.querySelector("#projects-grid");
+
+const liveProjectUrls = {
+  "Hello-Website-Blog": "https://urielfranco11.github.io/Hello-Website-Blog/",
+  ai_challenge_level_03:
+    "https://urielfranco11.github.io/ai_challenge_level_03/",
+};
+
+const renderProjects = (repositories) => {
+  if (!projectsGrid) return;
+
+  repositories.forEach((repo, index) => {
+    const projectLink = document.createElement("a");
+    projectLink.className = "project-card";
+    if (index === 0) projectLink.classList.add("project-card-featured");
+    projectLink.dataset.reveal = "";
+    projectLink.classList.add("is-visible");
+    projectLink.href = liveProjectUrls[repo.name];
+    projectLink.target = "_blank";
+    projectLink.rel = "noopener noreferrer";
+    projectLink.setAttribute("aria-label", `Abrir proyecto ${repo.name}`);
+
+    const overlay = document.createElement("div");
+    overlay.className = "project-overlay";
+
+    const content = document.createElement("div");
+    content.className = "project-content";
+
+    const projectNumber = document.createElement("span");
+    projectNumber.textContent = `${String(index + 1).padStart(2, "0")} / GitHub`;
+
+    const projectName = document.createElement("h3");
+    projectName.textContent = repo.name;
+
+    const projectDescription = document.createElement("p");
+    projectDescription.textContent =
+      repo.description || "Proyecto desarrollado por Uriel Franco.";
+
+    const arrow = document.createElement("span");
+    arrow.className = "project-arrow";
+    arrow.setAttribute("aria-hidden", "true");
+    arrow.textContent = "↗";
+
+    content.append(projectNumber, projectName, projectDescription);
+    projectLink.append(overlay, content, arrow);
+    projectsGrid.append(projectLink);
+  });
+
+  projectsGrid.setAttribute("aria-busy", "false");
+};
+
+const loadProjects = async () => {
+  if (!projectsGrid) return;
+
+  try {
+    const response = await fetch(
+      "https://api.github.com/users/UrielFranco11/repos",
+    );
+    if (!response.ok) throw new Error("No se pudieron cargar los proyectos.");
+
+    const repositories = await response.json();
+    const selectedRepositories = repositories.filter((repo) =>
+      Object.hasOwn(liveProjectUrls, repo.name),
+    );
+    renderProjects(selectedRepositories);
+  } catch {
+    projectsGrid.setAttribute("aria-busy", "false");
+    projectsGrid.innerHTML =
+      '<p class="projects-status">No se pudieron cargar los proyectos.</p>';
+  }
+};
+
+loadProjects();
 
 document.querySelector("#year").textContent = new Date().getFullYear();
 
