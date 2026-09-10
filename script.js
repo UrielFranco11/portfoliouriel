@@ -17,6 +17,7 @@ const liveProjectUrls = {
     "https://urielfranco11.github.io/ai_challenge_level_03/",
   resistor_calculator_01:
     "https://urielfranco11.github.io/resistor_calculator_01/",
+  Sk8_Landing_page: "https://urielfranco11.github.io/Sk8_Landing_page/",
 };
 
 const renderProjects = (repositories) => {
